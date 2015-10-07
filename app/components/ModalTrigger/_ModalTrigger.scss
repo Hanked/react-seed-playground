@@ -1,0 +1,20 @@
+.modal {
+  .modalTrigger {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .modalContent {
+    background-color: #f5f5f5;
+    width: 400px;
+    height: 400px;
+  }
+
+  .modalClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
