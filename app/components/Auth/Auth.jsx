@@ -26,6 +26,25 @@ export default class Auth extends Component {
     base.removeBinding(this.ref);
   }
 
+  insertUser(){
+    let usersClone = this.state.users;
+
+    // hard coded new user data for now
+    let newUsersUuid = 'hd8000ty67j8001';
+    let newUser = {
+      "dob" : "01/01/1900",
+      "favouriteColours" : [ "brown", "black", "grey" ],
+      "firstName" : "Stevo",
+      "lastName" : "Jojo"
+    };
+
+    usersClone[newUsersUuid] = newUser;
+
+    this.setState({
+      users: usersClone
+    });
+  }
+
   render(){
     console.log(typeof this.state.users);
     console.log(this.state.users[uuid]);
@@ -35,6 +54,7 @@ export default class Auth extends Component {
         <div>
           <h2>{this.state.users[uuid].firstName} {this.state.users[uuid].lastName}</h2>
           <h3>{this.state.users[uuid].dob}</h3>
+          <button onClick={this.insertUser.bind(this)}>add user!</button>
           {this.props.children}
         </div>
       )
